@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Vehicle>
+
+@foreach(var vehicle in Model)
+{
+<div>
+    
+    <div class="card card-outline-primary m-1 p-1">
+        <div class="bg-faded p-1">
+            <h4>
+                @vehicle.Year @vehicle.Make @vehicle.Model
+                @if (vehicle.Mileage != null)
+                {
+                    <br />
+                    <span class="badge badge-pill badge-primary">
+                        <small>Miles: @vehicle.Mileage?.ToString("n0")</small>
+                    </span>
+                }
+            </h4>
+        </div>        
+    </div>
+</div>
+}
